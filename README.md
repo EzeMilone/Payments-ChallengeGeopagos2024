@@ -1,5 +1,44 @@
 # Payments-ChallengeGeopagos2024
 
+## Uso del proyecto
+El proyecto corre en una imagen de docker. La misma se puede descargar del siguiente link: https://hub.docker.com/layers/ezemilone/paymentschallengegeopagos2024/latest/images/sha256:304e4a29599459ddd0a6d372ba8973e53d4c58f7e70d674359a96aad1ca137fe?uuid=3BAEA4D3-06D1-4231-873B-8A8C330821A0
+
+Una vez descargada puede correrse con docker run, una vez hecho esto se abrirá un Swaagger en el cual pueden realizarse las pruebas de los endpoints.
+
+### Para realizar las requests se aclaran algunos valores por defecto que se definieron con fines practicos:
+Enumeraciones
+
+1. AuthorizationType
+
+Esta enumeración define los diferentes tipos de autorización de pago:
+
+    Charge (1): Cargo realizado a un cliente.
+    Refund (2): Reembolso a un cliente.
+    Reversal (3): Anulación de un cargo previamente realizado.
+
+2. ClientType
+
+Esta enumeración define los diferentes tipos de cliente en relación a la autorización de pago:
+
+    SimpleAuthorization (1): Cliente que solo requiere autorización simple.
+    DoubleFactorAuthorization (2): Cliente que requiere autorización de doble factor (necesario confirmacion del pago).
+
+3. AuthorizationState
+
+Esta enumeración define los diferentes estados del proceso de autorización de pago:
+
+    PendingAuthorization (1): La autorización está pendiente de la validación inicial.
+    PendingConfirmation (2): La autorización está pendiente de confirmación manual.
+    Authorized (3): La autorización ha sido aprobada.
+    Denied (4): La autorización ha sido denegada.
+    Expired (5): La solicitud de autorización ha expirado pasados los 5 minutos.
+
+Además hay 4 clientes disponibles para realizar las pruebas:
+1) ID: 1, Nombre: John Doe, Tipo: SimpleAuthorization (Valor: 1)
+2) ID: 2, Nombre: David Johnson, Tipo: DoubleFactorAuthorization (Valor: 2)
+3) ID: 3, Nombre: John Wick, Tipo: SimpleAuthorization (Valor: 1)
+4) ID: 4, Nombre: Pete Mitchell, Tipo: DoubleFactorAuthorization (Valor: 2)
+
 ## Requerimientos del proyecto
 Estos requerimientos fueron estraidos del documento compartido por la organización Geopagos:
 
