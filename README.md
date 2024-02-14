@@ -1,9 +1,18 @@
 # Payments-ChallengeGeopagos2024
+Este proyecto implementa una API para la autorización de pagos, siguiendo los requisitos del "Challenge Payments - Geopagos - 2024".
 
 ## Uso del proyecto
-El proyecto corre en una imagen de docker. La misma se puede descargar del siguiente link: https://hub.docker.com/layers/ezemilone/paymentschallengegeopagos2024/latest/images/sha256:304e4a29599459ddd0a6d372ba8973e53d4c58f7e70d674359a96aad1ca137fe?uuid=3BAEA4D3-06D1-4231-873B-8A8C330821A0
+El proyecto corre con Docker, la imagen del mismo es: https://hub.docker.com/layers/ezemilone/paymentschallengegeopagos2024/latest/images/sha256:428e1e9fafb37407577fc28e6fa16b14e4db25c83b6405afe1fd7d7947ebad1a?uuid=3BAEA4D3-06D1-4231-873B-8A8C330821A0
 
-Una vez descargada puede correrse con docker run, una vez hecho esto se abrirá un Swaagger en el cual pueden realizarse las pruebas de los endpoints.
+También, desde Docker Desktop se puede buscar la imagen como: 'paymentschallengegeopagos2024' siendo del repositorio del usuario ezemilone. Una vez pulleada la imagen, se puede correr la misma configurandose un container, se recomienda mapear el puerto 8080 al cotainer.
+
+En comandos esto sería:
+
+docker pull ezemilone/paymentschallengegeopagos2024:latest
+
+docker run -it -p 8080:8080 ezemilone/paymentschallengegeopagos2024:latest payments
+
+La URL del swagger para realizar las pruebas es: http://localhost:8080/swagger/index.html (adaptar el puerto 8080 al mappeado a la hora de correr la imagen en el container).
 
 ### Para realizar las requests se aclaran algunos valores por defecto que se definieron con fines practicos:
 Enumeraciones
