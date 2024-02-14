@@ -2,8 +2,7 @@
 Este proyecto implementa una API para la autorización de pagos, siguiendo los requisitos del "Challenge Payments - Geopagos - 2024".
 
 ## Uso del proyecto
-El proyecto corre con Docker, la imagen del mismo es: https://hub.docker.com/layers/ezemilone/paymentschallengegeopagos2024/latest/images/sha256:428e1e9fafb37407577fc28e6fa16b14e4db25c83b6405afe1fd7d7947ebad1a?uuid=3BAEA4D3-06D1-4231-873B-8A8C330821A0
-
+El proyecto corre con Docker, la imagen del mismo es: https://hub.docker.com/layers/ezemilone/paymentschallengegeopagos2024/latest/images/sha256:a6257a175c19bc0918178242fb01ff0ac692db31efae657847889985100a5f0d?uuid=3BAEA4D3-06D1-4231-873B-8A8C330821A0
 También, desde Docker Desktop se puede buscar la imagen como: 'paymentschallengegeopagos2024' siendo del repositorio del usuario ezemilone. Una vez pulleada la imagen, se puede correr la misma configurandose un container, se recomienda mapear el puerto 8080 al cotainer.
 
 En comandos esto sería:
