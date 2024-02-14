@@ -5,24 +5,24 @@ using static Payments.Helpers.CustomTypes;
 namespace Payments.Entities
 {
     /// <summary>
-    /// Representa un cliente que puede realizar solicitudes de autorización de pago.
+    /// Represents a customer who can make payment authorisation requests.
     /// </summary>
     public class Client
     {
         /// <summary>
-        /// Identificador único del cliente.
+        /// Unique customer identifier.
         /// </summary>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         /// <summary>
-        /// Nombre del cliente.
+        /// Client's name.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Tipo de cliente en relación a la autorización de pago.
+        /// Type of customer in relation to payment authorisation.
         /// </summary>
         public ClientType Type { get; set; }
     }

@@ -13,13 +13,13 @@ namespace Payments.Helpers
         }
 
         /// <summary>
-        /// Rellena la base de datos con datos inciales, esto con fines meramente practicos
+        /// Fills the database with initial data, this is purely for practical purposes.
         /// </summary>
         public void SetUpDatabase()
         {
             if(context.Clients.ToList().Count == 0)
             {
-                // Agregar clientes iniciales que serviran para simular la solicitud de autorizacion de pago.
+                // Add initial customers that will be used to simulate the payment authorisation request.
                 context.Clients.AddRange(
                   new Client { Name = "John Doe", Type = CustomTypes.ClientType.SimpleAuthorization },
                   new Client { Name = "David Johnson", Type = CustomTypes.ClientType.DoubleFactorAuthorization },

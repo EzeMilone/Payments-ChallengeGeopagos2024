@@ -6,7 +6,7 @@
     public class ConfirmationDTO
     {
         /// <summary>
-        /// Identificador de la solicitud de autorización que se confirma.
+        /// Data transfer object representing a confirmation of a payment authorisation request.
         /// </summary>
         public int AuthorizationId { get; set; }
         public int ClientID { get; set; }

@@ -4,7 +4,7 @@ using Payments.Entities;
 namespace Payments.DB
 {
     /// <summary>
-    /// Contexto de la base de datos para la aplicación.
+    /// Database context for the application.
     /// </summary>
     public class DatabaseContext : DbContext
     {

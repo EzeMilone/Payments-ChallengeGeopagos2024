@@ -3,26 +3,26 @@
 namespace Payments.Entities.DTO
 {
     /// <summary>
-    /// Objeto de transferencia de datos que representa una solicitud de autorización de pago.
+    /// Data transfer object representing a request for payment authorisation.
     /// </summary>
     public class AuthorizationRequestDTO
     {
         /// <summary>
-        /// Monto de la solicitud de autorización.
+        /// Amount of the request for authorisation.
         /// </summary>
         public decimal Amount { get; set; }
 
         /// <summary>
-        /// Tipo de autorización solicitada (Cargo, Reembolso, Reversal).
+        /// Type of authorisation requested (Charge, Refund, Reversal).
         /// </summary>
         public AuthorizationType Type { get; set; }
 
         /// <summary>
-        /// Identificador del cliente que realiza la solicitud.
+        /// Identifier of the customer making the request.
         /// </summary>
         /// <remarks>
-        /// En un escenario real, este campo se obtendría del usuario autenticado que realiza la solicitud.
-        /// Se incluye aquí solo para fines prácticos.
+        /// In a real scenario, this field would be obtained from the authenticated user making the request.
+        /// It is included here for practical purposes only.
         /// </remarks>
         public int ClientID { get; set; }
     }

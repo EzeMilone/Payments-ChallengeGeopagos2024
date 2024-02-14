@@ -1,67 +1,67 @@
 ﻿namespace Payments.Helpers
 {
     /// <summary>
-    /// Clase que define enumeraciones utilizadas en la aplicación.
+    /// Class defining enumerations used in the application.
     /// </summary>
     public class CustomTypes
     {
         /// <summary>
-        /// Tipo de autorización de pago.
+        /// Type of payment authorisation.
         /// </summary>
         public enum AuthorizationType
         {
             /// <summary>
-            /// Cargo realizado a un cliente.
+            /// Charge made by a client.
             /// </summary>
             Charge = 1,
             /// <summary>
-            /// Reembolso a un cliente.
+            /// Refund to a customer.
             /// </summary>
             Refund = 2,
             /// <summary>
-            /// Anulación de un cargo previamente realizado.
+            /// Reversal of a charge previously made.
             /// </summary>
             Reversal = 3
         }
 
         /// <summary>
-        /// Tipo de cliente en relación a la autorización de pago.
+        /// Type of customer in relation to payment authorisation.
         /// </summary>
         public enum ClientType
         {
             /// <summary>
-            /// Cliente que solo requiere autorización simple.
+            /// Client requiring only simple authorisation.
             /// </summary>
             SimpleAuthorization = 1,
             /// <summary>
-            /// Cliente que requiere autorización de doble factor (necesario confirmacion del pago).
+            /// Customer requiring two-factor authorisation (payment confirmation required).
             /// </summary>
             DoubleFactorAuthorization = 2
         }
 
         /// <summary>
-        /// Estado del proceso de autorización de pago.
+        /// Status of the payment authorisation process.
         /// </summary>
         public enum AuthorizationState
         {
             /// <summary>
-            /// La autorización está pendiente de la validación inicial.
+            /// The authorisation is pending initial validation.
             /// </summary>
             PendingAuthorization = 1,
             /// <summary>
-            /// La autorización está pendiente de confirmación manual.
+            /// The authorisation is pending manual confirmation.
             /// </summary>
             PendingConfirmation = 2,
             /// <summary>
-            /// La autorización ha sido aprobada.
+            /// The authorisation has been approved.
             /// </summary>
             Authorized = 3,
             /// <summary>
-            /// La autorización ha sido denegada.
+            /// The authorisation has been refused.
             /// </summary>
             Denied = 4,
             /// <summary>
-            /// La solicitud de autorización ha expirado pasados los 5 minutos.
+            /// The authorisation request has expired after 5 minutes.
             /// </summary>
             Expired = 5
         }

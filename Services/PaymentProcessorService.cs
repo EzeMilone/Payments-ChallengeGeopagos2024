@@ -3,18 +3,18 @@
 namespace Payments.Services
 {
     /// <summary>
-    /// Servicio responsable de validar las solicitudes de autorización de pago.
+    /// Service responsible for validating payment authorisation requests.
     /// </summary>
     public class PaymentProcessorService
     {
         /// <summary>
-        /// Valida una solicitud de autorización de pago en base a un criterio simple.
+        /// Validates a payment authorisation request on the basis of a simple criterion.
         /// </summary>
-        /// <param name="request">La solicitud de autorización a validar.</param>
-        /// <returns>True si la solicitud es válida (el monto no contiene decimales), False en caso contrario.</returns>
+        /// <param name="request">The application for authorisation to be validated.</param>
+        /// <returns>True if the request is valid (the amount does not contain decimals), False otherwise.</returns>
         public bool ValidatePaymentRequest(AuthorizationRequest request)
         {
-            // Verifica que el monto no tenga decimales
+            // Check that the amount has no decimals.
             return Math.Truncate(request.Amount) == request.Amount;
         }
     }

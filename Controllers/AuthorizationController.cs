@@ -6,7 +6,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace Payments.Controllers
 {
     /// <summary>
-    /// Controlador encargado de gestionar las solicitudes de autorización de pago.
+    /// Controller in charge of handling payment authorisation requests.
     /// </summary>
     [ApiController]
     [Route("payment")]
@@ -15,7 +15,7 @@ namespace Payments.Controllers
         private AuthorizationService authorizationService;
 
         /// <summary>
-        /// Constructor del controlador que inyecta la dependencia del servicio de autorización.
+        /// Controller constructor injecting the dependency of the authorisation service.
         /// </summary>
         public AuthorizationController(AuthorizationService authorizationService)
         {
@@ -23,7 +23,7 @@ namespace Payments.Controllers
         }
 
         /// <summary>
-        /// Endpoint para solicitar una autorización de pago.
+        /// Endpoint to request a payment authorisation.
         /// </summary>
         [SwaggerOperation(
             Summary = "Requests an authorization of a payment",
@@ -36,7 +36,7 @@ namespace Payments.Controllers
         }
 
         /// <summary>
-        /// Endpoint para confirmar una solicitud de autorización.
+        /// Endpoint to confirm an authorisation request.
         /// </summary>
         [SwaggerOperation(
             Summary = "Confirms the payment of a double factor authorization request",
