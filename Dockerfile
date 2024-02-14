@@ -16,7 +16,7 @@ RUN dotnet build "./Payments-ChallengeGeopagos2024.csproj" -c $BUILD_CONFIGURATI
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Payments-ChallengeGeopagos2024.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=true
+RUN dotnet publish "./Payments-ChallengeGeopagos2024.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

@@ -69,7 +69,7 @@ namespace Payments.Services
                     }
                     else
                     {
-                        var timer = new System.Timers.Timer(30000);
+                        var timer = new System.Timers.Timer(300000);
                         timer.Elapsed += (sender, e) =>
                         {
                             ValidateAuthorization(authorizationRequest);
