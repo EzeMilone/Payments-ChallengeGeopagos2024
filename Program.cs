@@ -1,22 +1,40 @@
+using Microsoft.EntityFrameworkCore;
+using Payments.DB;
+using Payments.Helpers;
+
+// Construye la aplicación web
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Agrega servicios esenciales para la API
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen();  // Agrega soporte para Swagger UI
 
+builder.Services.AddDbContext<DatabaseContext>(options =>
+{
+    options.UseSqlite(builder.Configuration.GetConnectionString("Connection"));
+}, ServiceLifetime.Singleton);
+builder.Services.AddScoped<Payments.Services.PaymentProcessorService>();
+builder.Services.AddScoped<Payments.Services.AuthorizationService>();
+
+// Construye la aplicación
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-app.UseSwagger();
-app.UseSwaggerUI();
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
+    context.Database.Migrate();
+    // Crea los datos necesarios para ejecutar los procesos
+    DatabaseHelper databaseHelper = new DatabaseHelper(context);
+    databaseHelper.SetUpDatabase();
+}
 
-app.UseHttpsRedirection();
+// Configura el pipeline de solicitudes HTTP
+app.UseSwagger();  // Habilita Swagger UI
+app.UseSwaggerUI();  // Agrega la interfaz de Swagger UI
+app.UseHttpsRedirection();  // Redirigir a HTTPS si es necesario
+app.UseAuthorization();  // Habilita el middleware de autorización
+app.MapControllers();  // Mapea los controladores de la API
 
-app.UseAuthorization();
-
-app.MapControllers();
-
+// Inicia la aplicación
 app.Run();
