@@ -9,6 +9,7 @@ También, desde Docker Desktop se puede buscar la imagen como: 'paymentschalleng
 En comandos esto sería:
 
 docker pull ezemilone/paymentschallengegeopagos2024:latest
+
 docker run -it -p 8080:8080 ezemilone/paymentschallengegeopagos2024:latest payments
 
 La URL del swagger para realizar las pruebas es: http://localhost:8080/swagger/index.html (adaptar el puerto 8080 al mappeado a la hora de correr la imagen en el container).
